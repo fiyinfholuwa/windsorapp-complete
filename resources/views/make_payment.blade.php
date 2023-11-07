@@ -47,19 +47,19 @@
                         @csrf
                         <div class="row">
                             <div class="col-lg-6">
-                                <input type="number" name="amount_sent" placeholder="Amount Sent in Naira #">
+                                <input type="number" name="amount_sent" value="{{old('amount_sent')}}" placeholder="Amount Sent in Naira #">
                                 @error('amount_sent')
                                 <p style="color: red; font-weight: 400; text-align: center;">{{$message}}</p>
                                 @enderror
                             </div>
                             <div class="col-lg-6">
-                                <input type="text" name="bank_name" placeholder="Bank Name">
+                                <input type="text" name="bank_name" value="{{old('bank_name')}}" placeholder="Bank Name">
                                 @error('bank_name')
                                 <p style="color: red; font-weight: 400; text-align: center;">{{$message}}</p>
                                 @enderror
                             </div>
                             <div class="col-lg-12">
-                                <input type="text" name="account_name" placeholder="Acount Name ">
+                                <input type="text" name="account_name" value="{{old('account_name')}}" placeholder="Acount Name ">
                                 @error('account_name')
                                 <p style="color: red; font-weight: 400; text-align: center;">{{$message}}</p>
                                 @enderror

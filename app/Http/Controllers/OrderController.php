@@ -22,7 +22,8 @@ class OrderController extends Controller
         if ($response) {
     
             BookingOrder::where('bookingId',$bookingId)->update(['reference' => $reference, 'payment_status' => "Paid", 'payment_method' => "Online"]);
-         
+            $get_room_id = BookingOrder::where('bookingId', $bookingId)->first();
+            Room::where('id', $get_room_id->apartment_id)->update(['status' => "Unavailable"]);
             $notification = array(
                 'message' => 'Payment successful',
                 'alert-type' => 'success'
@@ -30,11 +31,15 @@ class OrderController extends Controller
     
             return redirect()->route('booking.user')->with($notification);
         } else {
-            return back()->withError('something went wrong');
+            $notification = array(
+                'message' => 'Error Occured',
+                'alert-type' => 'error'
+            );
+            return back()->with($notification);
         }
       
     }
-
+    
     public function makePayment(Request $request){
         $request->validate([
             'checkIn'          =>  'required',
@@ -69,9 +74,8 @@ class OrderController extends Controller
         $newBooking->payment_method = "Online";
         $newBooking->reference = "Not Paid";
         $newBooking->save();
-
         $updateRoom = Room::findOrFail($request->apartment_id);
-        $updateRoom->status = "Unavailable";
+        $updateRoom->status = "Available";
         $updateRoom->save();
 
         $formData = [
@@ -95,7 +99,11 @@ class OrderController extends Controller
             }
             
         } else {
-            return back()->withError('something went wrong');
+            $notification = array(
+                'message' => 'Network error, please try again later',
+                'alert-type' => 'error'
+            );
+            return back()->with($notification);
         }
         
       }else{

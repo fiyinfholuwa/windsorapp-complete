@@ -31,23 +31,44 @@
                     <div class="col-lg-6">
                         <div class="ap-title">
                             <h2>Welcome To Windsor Apartments</h2>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea magnam distinctio velit veritatis, ad possimus eaque consequuntur nesciunt reprehenderit? Autem nam cumque voluptatem excepturi ipsum eaque praesentium sit minus eius. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Libero nulla reprehenderit neque sint, soluta voluptatum totam voluptas laborum repudiandae! Tempore amet debitis pariatur! Quod vero voluptates incidunt fugit error. Nesciunt.</p>
+                            <p>Welcome to a world of refined comfort and modern luxury. At WINDSOR APARTMENTS, every stay is an experience to cherish. We take pride in offering you more than just a place to stay; we provide you with an experience that feels like home while embracing the convenience of a top-tier service apartment.</p>
+
+                            <p>We have been dedicated to providing exceptional service apartment accommodation for our customers around the world.
+                            </p>
 
                            
                         </div>
+                        <h2 style="color:#c70039;">Our Mission</h2>
+
+                        <p>Our vision is to be the epitome of hospitality excellence. We aspire to redefine the way travelers experience temporary housing by consistently providing exceptional service apartments that feel like home and exceed the expectations of every guest.</p>
+                        <h2 style="color:#c70039;">Our Vision</h2>
+
+                        <p>To provide exceptional hospitality by prioritizing guest needs, maintaining excellence in every detail, and creating memorable moments.</p>
+
+                        <p>To expand our presence globally, welcoming travelers, partners, and team members to join us in elevating hospitality standards.</p>
+
                     </div>
                     <div class="col-lg-5 offset-lg-1">
+                        <h2 style="color:#c70039;">Our Core Values</h2>
                         <ul class="ap-services">
-                            <li><i class="icon_check"></i> 20% Off On Accommodation.</li>
-                            <li><i class="icon_check"></i> Complimentary Daily Breakfast</li>
-                            <li><i class="icon_check"></i> 3 Pcs Laundry Per Day</li>
-                            <li><i class="icon_check"></i> Free Wifi.</li>
-                            <li><i class="icon_check"></i> Discount 20% On F&B</li>
+                            <li><p style="font-size:14px;"><i class="icon_check"></i><span style="font-weight:600;">Uncompromising Quality</span>:We envision a future where every guest associates us with unparalleled quality, from the moment they step into our apartments to the day they check out.</p></li>
+
+                            <li><p style="font-size:14px;"><i class="icon_check"></i><span style="font-weight:600;">Warm Hospitality</span>:We aim to create an atmosphere where every guest feels not just welcomed but truly valued, fostering a sense of belonging during their stay.</p></li>
+
+                            <li><p style="font-size:14px;"><i class="icon_check"></i><span style="font-weight:600;">Innovation and Comfort</span>: Our vision includes continuous innovation in apartment design and amenities to ensure that every stay is marked by modern comfort and convenience.</p></li>
+
+                            <li><p style="font-size:14px;"><i class="icon_check"></i><span style="font-weight:600;">Sustainability</span>: We are committed to integrating sustainable practices into our operations, working toward a future where eco-friendly hospitality is the norm.</p></li>
+ 
+
+                            <li><p style="font-size:14px;"><i class="icon_check"></i><span style="font-weight:600;">Memorable Experiences</span>: We envision every guest departing with not just a stay but a collection of cherished memories, each associated with their time at our service apartments.</p></li>
+
+                            <li><p style="font-size:14px;"><i class="icon_check"></i><span style="font-weight:600;">Global Reach:</span>In the future, we see our service apartments spanning key cities worldwide, offering travelers a consistent and exceptional experience wherever they go.</p></li>
+ 
                         </ul>
                     </div>
                 </div>
             </div>
-            <div class="about-page-services">
+            <!-- <div class="about-page-services">
                 <div class="row">
                     <div class="col-md-6">
                         <div class="ap-service-item set-bg" data-setbg="https://toohotel.com/wp-content/uploads/2022/09/TOO_restaurant_Panoramique_vue_Paris_nuit_v2-scaled.jpg">
@@ -81,7 +102,7 @@
 
 
                 </div>
-            </div>
+            </div> -->
         </div>
     </section>
     <!-- About Us Page Section End -->

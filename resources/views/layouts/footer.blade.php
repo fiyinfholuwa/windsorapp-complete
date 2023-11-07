@@ -11,7 +11,7 @@
                                     <img src="{{asset('img/winsorlogo.png')}}" alt="">
                                 </a>
                             </div>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing<br/> elit. Error quibusdam distinctio possimus qu</p>
+                            <p>Elevating Hospitality Through Exceptional Service Apartments...</p>
                             <div class="fa-social">
                                 <a href="#"><i class="fa fa-facebook"></i></a>
                                 <a href="#"><i class="fa fa-twitter"></i></a>

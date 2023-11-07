@@ -33,31 +33,31 @@
                             <div class = "product-imgs">
                               <div class = "img-display">
                                 <div class = "img-showcase">
-                                  <img src = "{{$get_room_detail->poster_img}}" alt = "shoe image">
-                                  <img src = "{{$get_room_detail->image_2}}" alt = "show image">
-                                  <img src = "{{$get_room_detail->image_3}}" alt = "shoe image">
-                                  <img src = "{{$get_room_detail->image_4}}" alt = "show image">
+                                  <img src = "{{asset($get_room_detail->poster_img)}}" alt = "shoe image">
+                                  <img src = "{{asset($get_room_detail->image_2)}}" alt = "show image">
+                                  <img src = "{{asset($get_room_detail->image_3)}}" alt = "shoe image">
+                                  <img src = "{{asset($get_room_detail->image_4)}}" alt = "show image">
                                 </div>
                               </div>
                               <div class = "img-select">
                                 <div class = "img-item">
                                   <a href = "#" data-id = "1">
-                                    <img src = "{{$get_room_detail->poster_img}}" alt = "show image">
+                                    <img src = "{{asset($get_room_detail->poster_img)}}" alt = "show image">
                                   </a>
                                 </div>
                                 <div class = "img-item">
                                   <a href = "#" data-id = "2">
-                                    <img src = "{{$get_room_detail->image_2}}" alt = "show image">
+                                    <img src = "{{asset($get_room_detail->image_2)}}" alt = "show image">
                                   </a>
                                 </div>
                                 <div class = "img-item">
                                   <a href = "#" data-id = "3">
-                                    <img src = "{{$get_room_detail->image_3}}" alt = "shoe image">
+                                    <img src = "{{asset($get_room_detail->image_3)}}" alt = "shoe image">
                                   </a>
                                 </div>
                                 <div class = "img-item">
                                   <a href = "#" data-id = "4">
-                                    <img src = "{{$get_room_detail->image_4}}" alt = "shoe image">
+                                    <img src = "{{asset($get_room_detail->image_4)}}" alt = "shoe image">
                                   </a>
                                 </div>
                               </div>
@@ -220,7 +220,8 @@
                            <button class="btn2" type="submit" ">Make Reservation / Offline Payment</button>
                            
                            @else
-                           <a href="{{route('login')}}" class="btn-2 btn btn-primary border-0">Login before making reservation.</a>
+                           <a href="{{route('login')}}" class="btn-2 btn btn-primary text-primary border-0">Login before making reservation.</a>
+                           <a href="{{route('register')}}" class="btn btn-danger text-white border-0 mt-4">I donot have account, please Login.</a>
                            @endif
                         </form>
                     </div>

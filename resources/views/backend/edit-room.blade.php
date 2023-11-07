@@ -86,15 +86,71 @@
           </div>
       
       </div>
-      <div class="col-lg-12">
+
+      <div class="col-md-6">
         <label for="validationCustomUsername" class="form-label">Room Poster Image</label>
        
-        <input type="file" class="form-control" name="poster_image"  id="file-upload"  accept="image/*" onchange="previewImage(event);" >
-        
+        <input type="file" class="form-control" name="poster_image"  id="file-upload" accept="image/*" onchange="previewImage(event);">
+        <p style="color:red; font-weight:400;">
+          @error('poster_image')
+            {{$message}}
+          @enderror
+        </p>
         <img height="50px" src="{{asset($get_room->poster_img)}}" width="50px" id="preview-selected-image" />
-          
+          <div class="invalid-feedback">
+            room poster image
+          </div>
       
       </div>
+
+      <div class="col-md-6">
+        <label for="validationCustomUsername" class="form-label">Room Image 2</label>
+       
+        <input type="file" class="form-control" name="image_2"  id="file-upload" accept="image/*" onchange="previewImage1(event);">
+        <p style="color:red; font-weight:400;">
+          @error('image_2')
+            {{$message}}
+          @enderror
+        </p>
+        <img height="50px" src="{{asset($get_room->image_2)}}" width="50px" id="preview-selected-image1" />
+          <div class="invalid-feedback">
+            room image 2
+          </div>
+      
+      </div>
+
+      <div class="col-md-6">
+        <label for="validationCustomUsername" class="form-label">Room Image 3</label>
+       
+        <input type="file" class="form-control" name="image_3"  id="file-upload" accept="image/*" onchange="previewImage2(event);">
+        <p style="color:red; font-weight:400;">
+          @error('image_3')
+            {{$message}}
+          @enderror
+        </p>
+        <img height="50px" src="{{asset($get_room->image_3)}}" width="50px" id="preview-selected-image2" />
+          <div class="invalid-feedback">
+            room image 3
+          </div>
+      
+      </div>
+
+      <div class="col-md-6">
+        <label for="validationCustomUsername" class="form-label">Room Image 4</label>
+       
+        <input type="file" class="form-control" name="image_4"  id="file-upload" accept="image/*" onchange="previewImage3(event);" >
+        <p style="color:red; font-weight:400;">
+          @error('image_4')
+            {{$message}}
+          @enderror
+        </p>
+        <img height="50px" src="{{asset($get_room->image_4)}}" width="50px" id="preview-selected-image3" />
+          <div class="invalid-feedback">
+            room image 4
+          </div>
+      
+      </div>
+
      
       <div class="col-12">
         <button class="btn btn-primary" type="submit">Update Room unit</button>

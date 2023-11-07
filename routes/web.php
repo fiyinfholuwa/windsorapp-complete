@@ -27,8 +27,8 @@ use Illuminate\Support\Facades\Route;
 //     return view('welcome');
 // });
 
-Route::get('/redirect', [AdminController::class, 'redirect'])->middleware(['auth', 'verified'])->name('redirect');
-Route::get('/dashboard', [AdminController::class, 'showDashboard'])->middleware(['auth', 'verified'])->name('dashboard');
+Route::get('/redirect', [AdminController::class, 'redirect'])->middleware(['auth'])->name('redirect');
+Route::get('/dashboard', [AdminController::class, 'showDashboard'])->middleware(['auth'])->name('dashboard');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
@@ -136,3 +136,7 @@ Route::get('/user/all', [AdminController::class, 'all_users'])->name('all.users'
 Route::get('/user/{id}', [AdminController::class, 'edit_user'])->name('user.edit');
 Route::post('/user/update/{id}', [AdminController::class, 'update_user'])->name('update.user');
 Route::post('/user/delete/{id}', [AdminController::class, 'delete_user'])->name('user.delete');
+
+Route::get('/foo', function () {
+    Artisan::call('storage:link');
+});

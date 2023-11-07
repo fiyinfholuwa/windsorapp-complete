@@ -24,14 +24,12 @@ class TestimonialController extends Controller
             'test_image'          =>  'required|mimes:jpeg,jpg,png|max:4000',
         ]);
 
-        $test_image = $request->file('test_image');
-        $extension = $test_image->getClientOriginalExtension();
-        $filename= time().".".$extension;
-        $test_image->move('upload/testimonials/', $filename);
-        $resized_image = Image::make(public_path('upload/testimonials/'.$filename))->fit(400, 400)->save();
-     
-        $image_url = '/upload/testimonials/'.$filename;
 
+        $image = $request->file('test_image');
+        $filename = time() . '_' . uniqid() . '.' . $image->getClientOriginalName();
+        $resizedImage = Image::make($image)->resize(400, 400);
+        $image->storeAs( '/testimonial/'.$filename , $resizedImage, 'public');
+        $image_url = "storage/testimonial/".$filename;
         $newTestimony = new Testimonial;
        
         $newTestimony->fullname = $request->fullname;
@@ -82,41 +80,25 @@ class TestimonialController extends Controller
 
             File::delete(public_path($path['path']));
 
-            $test_image = $request->file('test_image');
-            
-            $extension = $test_image->getClientOriginalExtension();
-            $filename= time().".".$extension;
-            $test_image->move('upload/testimonials/', $filename);
-            $resized_image = Image::make(public_path('upload/testimonials/'.$filename))->fit(400, 400)->save();
-        
-            $image_url = '/upload/testimonials/'.$filename;
-
-        
-            $updateTestimonial->fullname = $request->fullname;
-            $updateTestimonial->test_image = $image_url;
-            $updateTestimonial->occupation = $request->occupation;
-            $updateTestimonial->content = $request->content;
-            $updateTestimonial->save();
-            $notification = array(
-                'message' => 'Testimonial successfully updated',
-                'alert-type' => 'success'
-            );
-
-            return redirect()->route('testimonial.all')->with($notification);
+            $image = $request->file('test_image');
+            $filename = time() . '_' . uniqid() . '.' . $image->getClientOriginalName();
+            $resizedImage = Image::make($image)->resize(400, 400);
+            $image->storeAs( '/testimonial/'.$filename , $resizedImage, 'public');
+            $image_url = "storage/testimonial/".$filename;
         }else{
-            
-            $updateTestimonial->fullname = $request->fullname;
-            $updateTestimonial->occupation = $request->occupation;
-            $updateTestimonial->content = $request->content;
-            $updateTestimonial->save();
-            $notification = array(
-                'message' => 'Testimonial successfully updated',
-                'alert-type' => 'success'
-            );
-
-            return redirect()->route('testimonial.all')->with($notification);
+            $image_url = $updateTestimonial->test_image;
         }
-       
+        $updateTestimonial->fullname = $request->fullname;
+        $updateTestimonial->test_image = $image_url;
+        $updateTestimonial->occupation = $request->occupation;
+        $updateTestimonial->content = $request->content;
+        $updateTestimonial->save();
+        $notification = array(
+            'message' => 'Testimonial successfully updated',
+            'alert-type' => 'success'
+        );
+
+        return redirect()->route('testimonial.all')->with($notification);
     }
 
 }

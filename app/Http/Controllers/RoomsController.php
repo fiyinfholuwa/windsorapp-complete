@@ -113,33 +113,28 @@ class RoomsController extends Controller
         ]);
 
         $poster_image = $request->file('poster_image');
-        $extension1 = $poster_image->getClientOriginalExtension();
-        $filename1= rand (10,10000000).".".$extension1;
-        $poster_image->move('upload/rooms/', $filename1);
-        $resized_image1 = Image::make(public_path('upload/rooms/'.$filename1))->fit(700, 700)->save();
-        $image_url1 = '/upload/rooms/'.$filename1;
+        $filename1 = time() . '_' . uniqid() . '.' . $poster_image->getClientOriginalName();
+        $resizedImage1 = Image::make($poster_image)->resize(700, 700);
+        $poster_image->storeAs( '/rooms/'.$filename1 , $resizedImage1, 'public');
+        $image_url1 = "storage/rooms/".$filename1;
 
         $image_2 = $request->file('image_2');
-        $extension2 = $image_2->getClientOriginalExtension();
-        $filename2= rand (10,1000000000).".".$extension2;
-        $image_2->move('upload/rooms/', $filename2);
-        $resized_image2 = Image::make(public_path('upload/rooms/'.$filename2))->fit(700, 700)->save();
-        $image_url2 = '/upload/rooms/'.$filename2;
+        $filename2 = time() . '_' . uniqid() . '.' . $image_2->getClientOriginalName();
+        $resizedImage2 = Image::make($image_2)->resize(700, 700);
+        $image_2->storeAs( '/rooms/'.$filename2 , $resizedImage2, 'public');
+        $image_url2 = "storage/rooms/".$filename2;
 
         $image_3 = $request->file('image_3');
-        $extension3 = $image_3->getClientOriginalExtension();
-        $filename3= rand (10,1000000000).".".$extension3;
-        $image_3->move('upload/rooms/', $filename3);
-        $resized_image3 = Image::make(public_path('upload/rooms/'.$filename3))->fit(700, 700)->save();
-        $image_url3 = '/upload/rooms/'.$filename3;
+        $filename3 = time() . '_' . uniqid() . '.' . $image_3->getClientOriginalName();
+        $resizedImage3 = Image::make($image_3)->resize(700, 700);
+        $image_3->storeAs( '/rooms/'.$filename3 , $resizedImage3, 'public');
+        $image_url3 = "storage/rooms/".$filename3;
 
         $image_4 = $request->file('image_4');
-        $extension4 = $image_4->getClientOriginalExtension();
-        $filename4= rand (10,1000000000).".".$extension4;
-        $image_4->move('upload/rooms/', $filename4);
-        $resized_image4 = Image::make(public_path('upload/rooms/'.$filename4))->fit(700, 700)->save();
-        $image_url4 = '/upload/rooms/'.$filename4;
-
+        $filename4 = time() . '_' . uniqid() . '.' . $image_4->getClientOriginalName();
+        $resizedImage4 = Image::make($image_4)->resize(700, 700);
+        $image_4->storeAs( '/rooms/'.$filename4 , $resizedImage4, 'public');
+        $image_url4 = "storage/rooms/".$filename4;
 
         $newRoom = new Room;
        
@@ -210,41 +205,70 @@ class RoomsController extends Controller
             'services'          =>  'required', 
         ]);
         $updateRoom = Room::findOrFail($id);
+
+
         if ($request->hasFile('poster_image')) {
               
             $path = parse_url($updateRoom->poster_img);
 
             File::delete(public_path($path['path']));
-
             $poster_image = $request->file('poster_image');
-            
-            $extension = $poster_image->getClientOriginalExtension();
-            $filename= time().".".$extension;
-            $poster_image->move('upload/rooms/', $filename);
-            $resized_image = Image::make(public_path('upload/rooms/'.$filename))->fit(700, 700)->save();
-        
-            $image_url = '/upload/rooms/'.$filename;
-
-            
-            $updateRoom->room_label_id = $request->room_label_id;
-            $updateRoom->price = $request->price;
-            $updateRoom->capacity = $request->capacity;
-            $updateRoom->service = $request->services;
-            $updateRoom->poster_img = $image_url;
-           
-             $updateRoom->save();
-            $notification = array(
-                'message' => 'Room successfully updated',
-                'alert-type' => 'success'
-            );
-
-            return redirect()->route('all.room')->with($notification);
+            $filename1 = time() . '_' . uniqid() . '.' . $poster_image->getClientOriginalName();
+            $resizedImage1 = Image::make($poster_image)->resize(700, 700);
+            $poster_image->storeAs( '/rooms/'.$filename1 , $resizedImage1, 'public');
+            $image_url1 = "storage/rooms/".$filename1;
         }else{
+            $image_url1 = $updateRoom->poster_img;
+        }
+
+        if ($request->hasFile('image_2')) {
+            $path = parse_url($updateRoom->image_2);
+            File::delete(public_path($path['path']));
+            $image_2 = $request->file('image_2');
+            $filename2 = time() . '_' . uniqid() . '.' . $image_2->getClientOriginalName();
+            $resizedImage2 = Image::make($image_2)->resize(700, 700);
+            $image_2->storeAs( '/rooms/'.$filename2 , $resizedImage2, 'public');
+            $image_url2 = "storage/rooms/".$filename2;
+
+        }else{
+            $image_url2 = $updateRoom->image_2;
+        }
+
+        if ($request->hasFile('image_3')) { 
+            $path = parse_url($updateRoom->image_3);
+            File::delete(public_path($path['path']));
+            $image_3 = $request->file('image_3');
+            $filename3 = time() . '_' . uniqid() . '.' . $image_3->getClientOriginalName();
+            $resizedImage3 = Image::make($image_3)->resize(700, 700);
+            $image_3->storeAs( '/rooms/'.$filename3 , $resizedImage3, 'public');
+            $image_url3 = "storage/rooms/".$filename3;
+
+        }else{
+            $image_url3 = $updateRoom->image_3;
+        }
+
+        if ($request->hasFile('image_4')) { 
+            $path = parse_url($updateRoom->image_4);
+            File::delete(public_path($path['path']));
+
+            $image_4 = $request->file('image_4');
+            $filename4 = time() . '_' . uniqid() . '.' . $image_4->getClientOriginalName();
+            $resizedImage4 = Image::make($image_4)->resize(700, 700);
+            $image_4->storeAs( '/rooms/'.$filename4 , $resizedImage4, 'public');
+            $image_url4 = "storage/rooms/".$filename4;
+
+        }else{
+            $image_url4 = $updateRoom->image_4;
+        }
             
             $updateRoom->room_label_id = $request->room_label_id;
             $updateRoom->price = $request->price;
             $updateRoom->capacity = $request->capacity;
             $updateRoom->service = $request->services;
+            $updateRoom->poster_img = $image_url1;
+            $updateRoom->image_2 = $image_url2;
+            $updateRoom->image_3 = $image_url3;
+            $updateRoom->image_4 = $image_url4;
             $updateRoom->save();
             $notification = array(
                 'message' => 'Room successfully updated',
@@ -252,8 +276,7 @@ class RoomsController extends Controller
             );
 
             return redirect()->route('all.room')->with($notification);
-        }
-       
+        
     }
 
     // review section for each room 

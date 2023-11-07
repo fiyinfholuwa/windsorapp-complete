@@ -31,7 +31,6 @@
                             <table class="table">
                                 <thead>
                                     <tr>
-                                        
                                         <th class="text-center">BookingID #</th>
                                         <th class="text-center">Reference</th>
                                         <th class="text-center">Check In</th>
@@ -40,8 +39,6 @@
                                         <th class="text-center">Amount</th>
                                         <th class="text-center"> Payment Status</th>
                                         <th class="text-center">Actions</th>
-                                       
-                                     
                                     </tr>
                                 </thead>
                                 <tbody class="table-body">
@@ -97,7 +94,7 @@
                                 <thead>
                                     <tr>
                                    
-                                        <th class="text-center"><span>No Booking Yet</span></th>
+                                        <th class="text-center text-danger" style="color:red;"><span class="text-danger">No Booking Yet</span></th>
                                        
                                      
                                     </tr>

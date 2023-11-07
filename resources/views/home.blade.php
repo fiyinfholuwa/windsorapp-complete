@@ -69,10 +69,15 @@
                     <div class="about-text">
                         <div class="">
                             <h4>About Us</h4>
-                            <h2>Windsor Apartments</h2>
+                            <!-- <h2>Windsor Apartments</h2> -->
                         </div>
-                        <p class="f-para">Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel beatae nemo vero, magnam ipsam cum quod itaque at suscipit maiores eligendi inventore quas ipsum! Eum labore pariatur eius delectus fuga..</p>
-                        <p class="s-para">Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores cupiditate reiciendis voluptatibus excepturi, doloribus blanditiis veniam eius nihil explicabo a totam minima voluptas natus id consequatur obcaecati error non porro?</p>
+                        <!-- <p class="f-para">Elevating Hospitality Through Exceptional Service Apartments....</p> -->
+
+                        <p class="f-para">Welcome to a world of refined comfort and modern luxury. At WINDSOR APARTMENTS, every stay is an experience to cherish. We take pride in offering you more than just a place to stay; we provide you with an experience that feels like home while embracing the convenience of a top-tier service apartment.</p>
+
+                        <p class="f-para">We have been dedicated to providing exceptional service apartment accommodation for our customers around the world.
+                        </p>
+                        
                         <a href="{{route('about')}}" class="primary-btn about-btn">Read More</a>
                     </div>
                 </div>
@@ -102,37 +107,35 @@
             <div class="row">
                 <div class="col-lg-6 col-sm-6">
                     <div class="service-item">
-                        <i class="flaticon-036-parking"></i>
-                        <h4>Travel Plan</h4>
+                        <i class="fa fa-home fa-4x"></i>
+                        <h4>Executive Suites</h4>
                         <p>It is a great pleasure for us to welcome you to the Windsor apartment. We do hope that your
 stay with us will be enjoyable and we wish you a nice time in Ibadan, Oyo state</p>
                     </div>
                 </div>
+                <!-- <i class="fa-solid fa-business-time"></i> -->
                 <div class="col-lg-6 col-sm-6">
                     <div class="service-item">
-                        <i class="flaticon-033-dinner"></i>
-                        <h4>Catering Service</h4>
-                        <p>We have a wide range of menus to suit your taste, available in varieties such as
-continental/African breakfast, brunch, luncheon, afternoon, dinner, and supper, includes with
-room service menus.</p>
+                        <i class="fa-solid fa-business-time fa-4x"></i>
+                        <h4>Business Meeting</h4>
+                        <p>Our service apartments offer business-friendly amenities to cater to your work needs, ensuring a seamless blend of business and leisure.</p>
                     </div>
                 </div>
-               
+                <!-- <i class="fa-solid fa-jug-detergent"></i> -->
                 <div class="col-lg-6 col-sm-6">
                     <div class="service-item">
-                        <i class="flaticon-024-towel"></i>
+                        <i class="fa-solid fa-jug-detergent fa-4x"></i>
                         <h4>Laundry</h4>
-                        <p>One of the perks and benefits we offer to guests who stay at our apartment is access to
-premium laundry services.</p>
+                        <p>Keep your wardrobe fresh and clean with convenient on-site laundry facilities, making extended stays hassle-free.
+</p>
                     </div>
                 </div>
                
                 <div class="col-lg-6 col-sm-6">
                     <div class="service-item">
-                        <i class="flaticon-012-cocktail"></i>
-                        <h4>Bar & Drink</h4>
-                        <p>It is a great pleasure for us to welcome you with a drink at Windsor apartments. Our bars are
-open access to you throughout your stay with us.</p>
+                        <i class="fa fa-film fa-4x"></i>
+                        <h4>Movie and Photoshoot</h4>
+                        <p>Unleash your creative side with access to movie and photoshoot facilities, ideal for capturing special moments or professional projects.</p>
                     </div>
                 </div>
             </div>

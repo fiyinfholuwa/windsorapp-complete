@@ -45,7 +45,7 @@ class MyBookingController extends Controller
         $data = ['booking' => $booking,
                 'room_label' => $room_label,
                 'amount_in_word'=> $amount_in_word
-    ];
+        ];
         $pdf = Pdf::loadView('invoice', $data);
          return $pdf->download('invoice'.$booking->bookingId.'.pdf');
     }

@@ -34,7 +34,7 @@
                         <h3 class="mb-3">{{$job_details->position}}</h3>
                         <span class="text-truncate me-3"><i class="fa fa-map-marker-alt  me-2"></i>{{$job_details->location}}</span>
                         <span class="text-truncate me-3"><i class="far fa-clock me-2"></i>{{$job_details->jobType}}</span>
-                        <span class="text-truncate me-0"><i class="far fa-money-bill-alt  me-2"></i>#{{$job_details->salary}}</span>
+                        <span class="text-truncate me-0"><i class="far fa-money-bill-alt  me-2"></i>{{$job_details->salary}}</span>
                     </div>
                 </div>
                
@@ -112,14 +112,11 @@
                     <p><i class="fa fa-angle-right text-dark me-2" style="padding: 10px;"></i>Published On: {{ date('d-m-Y', strtotime($job_details->created_at))}} </p>
                     <p><i class="fa fa-angle-right text-dark me-2" style="padding: 10px;"></i>Vacancy: {{$job_details->vacancy}}</p>
                     <p><i class="fa fa-angle-right text-dark me-2"style="padding: 10px;"></i>Job Nature: {{$job_details->jobType}}</p>
-                    <p><i class="fa fa-angle-right text-dark me-2"style="padding: 10px;"></i>Salary: #{{$job_details->salary}}</p>
+                    <p><i class="fa fa-angle-right text-dark me-2"style="padding: 10px;"></i>Salary: {{$job_details->salary}}</p>
                     <p><i class="fa fa-angle-right text-dark me-2"style="padding: 10px;"></i>Location: {{$job_details->location}}</p>
                     <p class="m-0"><i class="fa fa-angle-right text-dark me-2" style="padding: 10px;"></i>Deadline: {{ date('d-m-Y', strtotime($job_details->deadline))}}</p>
                 </div>
-                <div class="bg-light rounded p-5 wow slideInUp" data-wow-delay="0.1s">
-                    <h4 class="mb-4">Company Detail</h4>
-                    <p class="m-0">Ipsum dolor ipsum accusam stet et et diam dolores, sed rebum sadipscing elitr vero dolores. Lorem dolore elitr justo et no gubergren sadipscing, ipsum et takimata aliquyam et rebum est ipsum lorem diam. Et lorem magna eirmod est et et sanctus et, kasd clita labore.</p>
-                </div>
+               
             </div>
         </div>
     </div>

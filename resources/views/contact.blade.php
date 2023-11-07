@@ -11,8 +11,8 @@
                 <div class="col-lg-4">
                     <div class="contact-text">
                         <h2>Get In Touch</h2>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                            labore et dolore magna aliqua.</p>
+                        <!-- <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut -->
+                            <!-- labore et dolore magna aliqua.</p> -->
                         <table>
                             <tbody>
                                 <tr>

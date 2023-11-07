@@ -72,7 +72,7 @@
                     </div>
                 </div>
             @else
-            <div class="text-center text-danger" style="padding:40px 0px"><h3>No Available Room</h3></div>
+            <div class="text-center text-danger" style="padding:40px 0px; color:red;"><h3>No Available Room</h3></div>
             @endif
             </div>
         </div>

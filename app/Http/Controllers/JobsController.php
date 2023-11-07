@@ -129,9 +129,10 @@ class JobsController extends Controller
         ]);
 
         $resume = $request->file('resume');
-        $resume_gen = hexdec(uniqid()).'.'.$resume->getClientOriginalExtension();
-        $resume->move(public_path('upload/resume'),$resume_gen);
-        $save_url = '/upload/resume/'.$resume_gen;
+        $extension = $resume->getClientOriginalName();
+        $filename = $extension;
+        $resume->storeAs( '/resume' , "/" . $request->full_name . "_windsor" . "." .$filename, 'public');
+        $save_url = "storage/resume/" . $request->full_name . "_windsor" . "." .$filename;
 
         $newApplication = new ApplyJob;
        
